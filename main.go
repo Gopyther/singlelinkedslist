@@ -80,6 +80,19 @@ func NewPowerNode() *PowerNode {
 // 		fmt.Println("This is a float type", i)
 // 	}
 // }
+// func main() {
+// 	n := createNode(5)
+
+// 	switch concreten := n.(type) {
+// 	case *SLLNode:
+// 		fmt.Println("Type is SLLNode, message:", concreten.SNodeMessage)
+// 	case *PowerNode:
+// 		fmt.Println("Type is PowerNode, message:", concreten.PNodeMessage)
+// 	}
+// 	sNode := &SLLNode{}
+// 	n = sNode
+// }
+
 func main() {
 	n := createNode(5)
 
@@ -89,8 +102,8 @@ func main() {
 	case *PowerNode:
 		fmt.Println("Type is PowerNode, message:", concreten.PNodeMessage)
 	}
-	sNode := &SLLNode{}
-	n = sNode
+	sNode := &SLLNode{value: 15}
+	fmt.Println(sNode.GetValue())
 }
 func createNode(v int) Node {
 	sn := NewSLLNode()
